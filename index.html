@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>TaskFlow</h1>
+        <p>Organize suas tarefas. Alcance seus objetivos.</p>
+    </header>
+
+    <main>
+        <section id="formulario-tarefas">
+            <h2>Nova tarefa</h2>
+
+            <form id="form-tarefa">
+                <label for="titulo">Título da tarefa</label>
+                <input
+                    type="text"
+                    id="titulo"
+                    placeholder="Ex.: Estudar JavaScript"
+                    required
+                >
+
+                <label for="descricao">Descrição</label>
+                <textarea
+                    id="descricao"
+                    placeholder="Descreva sua tarefa"
+                ></textarea>
+
+                <button type="submit">Adicionar tarefa</button>
+            </form>
+        </section>
+
+        <section id="lista-tarefas">
+            <h2>Minhas tarefas</h2>
+            
+
+<div class="resumo-tarefas">
+    <div class="cartao-resumo">
+        <span>Total de tarefas</span>
+        <strong id="total-tarefas">0</strong>
+    </div>
+
+    <div class="cartao-resumo">
+        <span>Pendentes</span>
+        <strong id="total-pendentes">0</strong>
+    </div>
+
+    <div class="cartao-resumo">
+        <span>Concluídas</span>
+        <strong id="total-concluidas">0</strong>
+    </div>
+
+    <div class="progresso-tarefas">
+        <div class="progresso-cabecalho">
+            <span>Progresso geral</span>
+            <span id="porcentagem-progresso">0%</span>
+        </div>
+
+        <div class="barra-fundo">
+            <div id="barra-progresso"></div>
+        </div>
+    </div>
+</div>
+
+            <label for="filtro">Filtrar tarefas</label>
+            <select id="filtro">
+                <option value="todas">Todas as tarefas</option>
+                <option value="pendentes">Pendentes</option>
+                <option value="concluidas">Concluídas</option>
+            </select>
+
+            <p id="mensagem-vazia">
+                Nenhuma tarefa cadastrada ainda.
+            </p>
+
+            <ul id="tarefas"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>TaskFlow — Projeto Integrador de Front-End Frameworks</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,388 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   2. CABEÇALHO
+======================================== */
+
+header {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #a78bfa;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+
+/* ========================================
+   3. CONTEÚDO PRINCIPAL
+======================================== */
+
+main {
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+section {
+    background-color: #1e293b;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #334155;
+    border-radius: 14px;
+}
+
+section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #f1f5f9;
+}
+
+
+/* ========================================
+   4. FORMULÁRIO
+======================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #cbd5e1;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 3px #a78bfa30;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+/* ========================================
+   5. BOTÕES
+======================================== */
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7c3aed;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+form button {
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #6d28d9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 2px solid #c4b5fd;
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   6. LISTA DE TAREFAS
+======================================== */
+
+#tarefas {
+    list-style: none;
+}
+
+#mensagem-vazia {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+
+/* ========================================
+   7. RODAPÉ
+======================================== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    border-top: 1px solid #334155;
+}
+
+
+/* ========================================
+   8. ADAPTAÇÃO PARA CELULARES
+======================================== */
+
+@media (max-width: 600px) {
+    header {
+        padding: 30px 15px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    section h2 {
+        font-size: 1.15rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   9. FILTRO E ITENS DA LISTA
+======================================== */
+
+#filtro {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-size: 1rem;
+}
+
+.item-tarefa {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 18px;
+    margin-top: 12px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.conteudo-tarefa {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.conteudo-tarefa h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.conteudo-tarefa p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.tarefa-concluida {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.status {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status.pendente {
+    background-color: #78350f;
+    color: #fde68a;
+}
+
+.status.concluida {
+    background-color: #14532d;
+    color: #bbf7d0;
+}
+
+.acoes-tarefa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.acoes-tarefa button {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-concluir {
+    background-color: #15803d;
+}
+
+.btn-concluir:hover {
+    background-color: #166534;
+}
+
+.btn-excluir {
+    background-color: #b91c1c;
+}
+
+.btn-excluir:hover {
+    background-color: #991b1b;
+}
+
+@media (max-width: 600px) {
+    .item-tarefa {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .acoes-tarefa {
+        width: 100%;
+    }
+
+    .acoes-tarefa button {
+        flex: 1;
+    }
+}
+
+/* Resumo das tarefas */
+.resumo-tarefas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.cartao-resumo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.cartao-resumo span {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+}
+
+.cartao-resumo strong {
+    color: #a78bfa;
+    font-size: 1.8rem;
+}
+
+@media (max-width: 450px) {
+    .resumo-tarefas {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-resumo {
+        padding: 12px;
+    }
+}
+
+
+/* Barra de progresso */
+.progresso-tarefas {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+.progresso-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+#porcentagem-progresso {
+    color: #a78bfa;
+    font-weight: bold;
+}
+
+.barra-fundo {
+    width: 100%;
+    height: 10px;
+    background-color: #334155;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#barra-progresso {
+    width: 0%;
+    height: 100%;
+    background-color: #7c3aed;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
